@@ -1,6 +1,6 @@
 # Implementation notes
 
-I started with the supplied contract and unchanged starter. The aim is a defensible answer: correct value, qualifiers, date, evidence, and uncertainty. The public practice evaluator is a compatibility and failure-analysis tool; it does not establish hidden-set performance.
+The organizer’s starter defines the interface. The practice evaluator checks compatibility, while separate regressions cover cases a value-only score can miss, such as two identical rates for different products.
 
 The implementation uses only Python's standard library and needs no API keys. `solution.py` exposes `build()`, `engine.py` keeps dated views and resolves questions, `ledger.py` extracts qualified facts, and `prose.py` handles bounded prose topics. `models.py` uses the organizer's contract classes when present and local equivalents for standalone tests.
 

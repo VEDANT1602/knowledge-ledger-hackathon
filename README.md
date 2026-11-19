@@ -2,9 +2,9 @@
 
 **Vedant Thaker**
 
-A small, offline knowledge system for questions about a website that changes over time. It keeps each supplied snapshot intact, extracts qualified facts from tables and prose, and returns an answer with its source. When the available evidence cannot support one answer, it says so.
+Suppose a bank's promotion expired on Friday, but its page was crawled again on Monday. A current-rate answer should still treat the offer as expired. Knowledge Ledger keeps the observation date separate from the effective and expiration dates. The [regression tests](tests/test_regressions.py) cover this case alongside two neighboring table cells that mean different things: rate and APY.
 
-I treat a correct answer as five things together: the right value, the right qualifiers, the right date, a supporting source, and an honest level of certainty. A fast answer is useful only after those checks pass.
+Everything runs offline with Python’s standard library. An answer includes the matching facts and source from the chosen snapshot. If two equally authoritative sources disagree, the resolver can return uncertainty. [Resolver](engine.py) · [Implementation notes](NOTES.md)
 
 ## How it works
 
